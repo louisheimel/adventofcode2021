@@ -43,12 +43,15 @@ const bingo = board => called => rowBingo(board)(called) ||
 let called = []
 let winner = null 
 let n = 0
+
 while (called.length < numbersCalled.length && !winner) {
 
   called.push(numbersCalled[n])
   for (let j = 0; j < boards.length; j++) {
     board = boards[j]
     if (bingo(board)(called)) {
+
+      console.log(j)
       winner = board
       break
     }
